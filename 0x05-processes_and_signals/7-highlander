@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 # To infinity and beyond indefinitely with SIGTERM handling
 
-terminate_handler(){
-	echo "I am invincible!!!"
-	exit 0
-}
-
-trap terminate_handler SIGTERM
-
 while true; do
 	echo "To infinity and beyond"
 	sleep 2
+	trap 'echo "I am invincible!!!"' SIGTERM
 done
