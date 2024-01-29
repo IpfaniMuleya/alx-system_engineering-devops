@@ -2,8 +2,7 @@
 # This script displays the content of the
 #+ current directory in a list format
 
-for file in *; do
-	if [ -f "$file" ] && [[ "$file" == *-* ]]; then
-		echo "${file#*-}"
-	fi
+list=$(ls)
+for file in $list; do
+	echo "$file" | cut -d '-' -f2
 done
